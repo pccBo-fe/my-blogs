@@ -7,4 +7,4 @@
   - [其他核心知识](react/react05-others.md)
 
 - Vue
-  - [响应式原理](vue/vue01-响应式原理.md)
+  - [响应式原理](vue/vue01-proxy.md)

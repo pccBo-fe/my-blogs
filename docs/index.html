@@ -12,15 +12,20 @@
   <div id="app"></div>
   <script>
     window.$docsify = {
-      name: '',
-      repo: '',
+      name: '<div style="text-align: left; font-weight: bold; padding-left: 10px;">pccBo’s blog</div>',
+      repo: 'https://github.com/pccBo-fe',
       loadSidebar: true,
-      subMaxLevel: 6
+      autoHeader: true,
+      subMaxLevel: 6,
+      formatUpdated: '{MM}/{DD} {HH}:{mm}'
     }
   </script>
   <!-- Docsify v4 -->
   <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify-pagination/dist/docsify-pagination.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/emoji.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify-copy-code"></script>
 </body>
 </html>

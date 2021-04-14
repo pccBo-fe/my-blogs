@@ -29,8 +29,8 @@
     2.函数组件在渲染时将 Hook 按照调用顺序以链表的形式挂在 Fiber Node 上面。得到的链表如下所示，其中 Fiber Node 的属性 memoizedState 用来指向Hook 链表的第一个节点，Hook 的属性 memoizedState 用来存放 state 值或 effect回调函数  
     3.顺序调用的流程  
     4.hook如何通过闭包实现状态管理(讲解的很清晰)  
-  - [hook运行机制-配合饿了么的文章食用](https://juejin.cn/post/6944863057000529933) 
-    ![](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/d99a12ad708647d4bfd075a59d518c8b~tplv-k3u1fbpfcp-watermark.image?imageslim)
+  - [hook运行机制-配合饿了么的文章食用](https://juejin.cn/post/6944863057000529933)  
+    ![](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/d99a12ad708647d4bfd075a59d518c8b~tplv-k3u1fbpfcp-watermark.image?imageslim ':size=60%')  
   - [useState源码解析](https://zhuanlan.zhihu.com/p/200855720)
 
 #### [hook使用时一些值得关注的点](https://juejin.cn/post/6844904176003055630)

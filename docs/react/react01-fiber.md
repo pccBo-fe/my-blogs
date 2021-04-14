@@ -1,4 +1,4 @@
-# react fiber相关  
+# react fiber相关
 
 #### [个人整理-workLoop流程](https://xiaomi.f.mioffice.cn/docs/dock4PzmhM1a1YAmLaN8tRUFIQc)
 #### [fiber reconcile流程](http://echizen.github.io/tech/2019/04-06-react-fiber)`推荐`
@@ -13,7 +13,7 @@
   后面总结部分写的很好  
 #### [从作者角度去分析fiber架构](http://taoweng.site/index.php/archives/262/)`推荐`
 #### [政采云- fiber是如何实现更新过程可控的](https://juejin.cn/post/6911681589558640654)`推荐`
-  ![](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/6051a82ff5604046a11a80c6fe0d4d00~tplv-k3u1fbpfcp-zoom-1.image)
+  ![](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/6051a82ff5604046a11a80c6fe0d4d00~tplv-k3u1fbpfcp-zoom-1.image ':size=40%')  
   从源码角度重点讲述react如何挂起,恢复,终止任务的:  
   在一次任务结束后返回该处理节点的子节点或兄弟节点或父节点。只要有节点返回，说明还有下一个任务，下一个任务的处理对象就是返回的节点。通过一个全局变量记住当前任务节点，当浏览器再次空闲的时候，通过这个全局变量，找到它的下一个任务需要处理的节点恢复执行。就这样一直循环下去，直到没有需要处理的节点返回，代表所有任务执行完成  
   关于fiber的思考：  

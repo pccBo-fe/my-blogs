@@ -23,6 +23,7 @@
     }, 100);
   }
   ```
+
 #### setState相关
   - [个人整理-setState同步or异步](https://wiki.n.miui.com/pages/viewpage.action?pageId=549096496)  
     setState 是同步的还是异步的取决于之前有没有执行过 batchedUpdates ，如果有就是异步的。如果没有执行过，就是同步的  
@@ -55,4 +56,4 @@
     }
   }
   ```
-  3.这两种方法暂时都没有对应的hook(react正在做),所以从这个角度来说fc暂时无法完全替代cc
+  3.这两种方法(&getDerivedStateFromProps)暂时都没有对应的hook(react正在做),所以从这个角度来说fc暂时无法完全替代cc

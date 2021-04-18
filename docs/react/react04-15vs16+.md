@@ -1,9 +1,9 @@
 # 对比15版本与16+版本的区别  
 #### 生命周期
 `v15`  
-![](https://user-images.githubusercontent.com/24861316/46216126-7bc48e80-c371-11e8-86e3-2565fd251508.png ':size=80%')
-`v16.3`
-![](https://user-images.githubusercontent.com/24861316/68308912-96c30f80-00e8-11ea-9317-126940a5cadb.png ':size=80%')
+![](https://user-images.githubusercontent.com/24861316/46216126-7bc48e80-c371-11e8-86e3-2565fd251508.png ':size=80%')  
+`v16.3`  
+![](https://user-images.githubusercontent.com/24861316/68308912-96c30f80-00e8-11ea-9317-126940a5cadb.png ':size=80%')  
 `v16.4+`
 getDerivedStateFromProps无论是Mounting还是Updating，也无论是因为什么引起的Updating，全部都会被调用
 ![](https://user-images.githubusercontent.com/24861316/68309077-dee23200-00e8-11ea-8fa3-7a8f4e5fec4c.png ':size=80%')  

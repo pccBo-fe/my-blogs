@@ -1,6 +1,6 @@
 # vue响应式原理
 
-### defineProperty
+#### defineProperty
 ```js
 // 触发更新视图
 function updateView() {
@@ -90,7 +90,7 @@ observer(data)
 // data.info.address = '上海' // 深度监听
 data.nums.push(4) // 监听数组
 ```
-### proxy
+#### proxy
 ```js
 // 创建响应式
 function reactive(target = {}) {
@@ -164,4 +164,22 @@ const data = {
 }
 
 const proxyData = reactive(data)
+```
+
+#### [vue更新粒度](https://juejin.cn/post/6844904113432444942#heading-10)
+文章关于父子组件在同一个tick里更新的部分解释的比较清晰  
+- 父组件更新的过程中又触发了子组件的响应式更新，导致触发了 queueWatcher 的话，由于 isFlushing 是 true，会这样走 else 中的逻辑，**由于子组件的 id 是大于父组件的 id 的，所以会在插入在父组件的 watcher 之后**，父组件的更新函数执行完毕后，自然就会执行子组件的 watcher 了。这是在同一个 tick 中的
+```js
+if (!flushing) {
+  queue.push(watcher) // 只是在队列中加入了这个 watcher 直接执行
+} else {
+  // if already flushing, splice the watcher based on its id
+  // if already past its id, it will be run next immediately.
+  let i = queue.length - 1
+  while (i > index && queue[i].id > watcher.id) {
+    i--
+  }
+  queue.splice(i + 1, 0, watcher)
+}
+
 ```

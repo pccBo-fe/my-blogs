@@ -181,5 +181,4 @@ if (!flushing) {
   }
   queue.splice(i + 1, 0, watcher)
 }
-
 ```

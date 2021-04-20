@@ -1,6 +1,7 @@
 - React & Vue
   - [React](react/react01-fiber.md)
   - [Vue](vue/vue01-proxy.md)
+  - [awesome react](react/react06-github合集.md)
 
 - Webpack & Vite
   - [webpack](webpack&vite/01-webpack01-配置篇.md)

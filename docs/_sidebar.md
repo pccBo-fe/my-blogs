@@ -5,6 +5,7 @@
   <!-- - [redux](prototype.md) -->
   - [15 vs 16+](react/react04-15vs16+.md)
   - [其他核心知识](react/react05-others.md)
+  - [awesome react](react/react06-github合集.md)
 
 - Vue
   - [响应式原理](vue/vue01-proxy.md)

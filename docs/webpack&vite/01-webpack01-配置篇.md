@@ -21,7 +21,7 @@
 - bundle: webpack打包成的最终结果为bundle  
 > loader执行顺序：从右往左, 因为compose实现
 
-<img src='https://image-1255652541.cos.ap-shanghai.myqcloud.com/uPic/image-20200518210532171.png' style='width:400px;height:140 px'/>  
+<img src='../assets/webpack-chunk.png' style='width:400px;height:140 px'/>  
 
 #### 多入口配置
 <details><summary>展开</summary>

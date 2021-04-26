@@ -8,6 +8,10 @@
   - [vite](webpack&vite/02-vite.md)
   - [babel](webpack&vite/05-babel.md)
 
+- js & ts
+  - [js](javascript/awesome.md)
+  - [ts](typescript/01-ts.md)
+
 <!-- - 读书笔记
   - [浪潮之巅](books/浪潮之巅.md)
   - [数学之美](books/数学之美.md)

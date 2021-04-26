@@ -6,6 +6,7 @@
 - Webpack & Vite
   - [webpack](webpack&vite/01-webpack01-配置篇.md)
   - [vite](webpack&vite/02-vite.md)
+  - [babel](webpack&vite/05-babel.md)
 
 <!-- - 读书笔记
   - [浪潮之巅](books/浪潮之巅.md)

@@ -59,3 +59,5 @@ getDerivedStateFromProps无论是Mounting还是Updating，也无论是因为什�
   - v17放弃事件池,为每一个合成事件创建新的对象  
   - v17支持了原生捕获事件  
 #### context vs React.createContext
+  [源码分析](https://xie.infoq.cn/article/d56577c78e76508722e37025f)
+  [context使用技巧](https://zhuanlan.zhihu.com/p/50336226)`必看推荐`  跟性能优化相关  

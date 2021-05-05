@@ -1,5 +1,9 @@
 # webpack 配置总结
 
+#### why webpack?
+  当我们遇到一个新技术时，第一步应该考虑的就是这个技术解决了什么问题，带来了什么优势  
+  https://webpack.docschina.org/concepts/why-webpack/
+
 ![](../assets/webpack-guide.png)
 
 电子书： [《深入浅出webpack》](http://webpack.wuhaolin.cn/)
@@ -249,7 +253,7 @@ optimization: {
         name: 'vendor', // chunk 名称
         priority: 1, // 权限更高，优先抽离，重要！！！
         test: /node_modules/,
-        minSize: 0,  // 大小限制
+        minSize: 30000,  // 大小限制 默认值30000
         minChunks: 1  // 最少复用过几次
       },
 
@@ -257,7 +261,7 @@ optimization: {
       common: {
         name: 'common', // chunk 名称
         priority: 0, // 优先级
-        minSize: 0,  // 公共模块的大小限制
+        minSize: 30000,  // 公共模块的大小限制 默认值30000
         minChunks: 2  // 公共模块最少复用过几次
       }
     }

@@ -10,6 +10,7 @@
 - Vue
   - [知识图谱](vue/知识图谱.md)
   - [响应式原理](vue/vue01-proxy.md)
+  - [批量更新原理](vue/vue02-nextTick.md)
 - js
   - [awesome js](javascript/awesome.md)
 - ts
@@ -25,3 +26,5 @@
   - [移动端适配](css/01-移动端适配.md)
 - 计算机基础知识
   - [http](计算机基础知识/01-http.md)
+- 各种手写实现
+  - [promise相关](各种手写实现/01-promise.md)

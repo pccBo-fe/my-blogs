@@ -37,6 +37,7 @@
     1.生命周期中的 setState 和 React 合成事件的 setState 是异步的  
     2.setTimeout 和 原生事件（因为没有初始调用batchUpdates） 中的 setState 是同步的 
   - [16+setState批处理源码](https://zhuanlan.zhihu.com/p/56507101)
+  - [concurrent模式下的setState](https://segmentfault.com/a/1190000024560483) `待看`
 
 #### componentDidCatch(error, info) vs static getDerivedStateFromError(error)
   1.调用时机不同,getDerivedStateFromError渲染时调用,因此为static;componentDidCatch commit阶段调用,因此可以执行副作用(如log等)  
@@ -77,3 +78,36 @@
     这篇文章介绍的提取不需要渲染的部分转为子组件并采用this.props.children的方式非常值得推荐  
   - redux 精细化依赖
   - 合理的拆分组件其实也是可以做性能优化的，你这么想，如果你整个页面只有一个大的组件，那么当 props 或者 state 变更之后，需要 reconciliation 的是整个组件，其实你只是变了一个文字，如果你进行了合理的组件拆分，你就可以控制更小粒度的更新。
+  - [关于props.children方案能够阻止子组件不必要的render的原理](https://juejin.cn/post/6956397155363848228) `必看推荐`
+  ```js
+  // useMemo child被缓存，所以不变
+  // props children 由于child是外层传入的props，parent外层组件未重新渲染，所以传入的props不变
+  function Parent() {
+    return createElement(div, {}, ["父组件", child])
+  }
+  // 常规
+  function Parent() {
+    return createElement(div, {}, ["父组件", createElement(Child, {}, null)])
+  }
+  // reconcile 逻辑
+  function reconcile(current, next) {
+    let needRender = false
+    if (current.props !== next.props) {
+      // 虚拟 DOM 的 Props 是新的，则需要执行 Render 过程
+      needRender = true
+    } else if (current.stateHasChanged) {
+      // 该虚拟 DOM 的状态发生了更新，则需要执行 Render 过程
+      needRender = true
+    } else if (current.descendantStateHasChanged) {
+      // 该虚拟 DOM 的子孙存在状态更新，不会执行该组件的 Render 过程
+      // 但是将递归对子孙虚拟 DOM 执行调和阶段
+      reconcile(current.child, current.child)
+    }
+
+    if (needRender) {
+      // current.func 表示虚拟 DOM 对应的组件函数，比如：例子中 Parent、Child
+      nextChild = current.func(current.props)
+      reconcile(current.child, nextChild)
+    }
+  }
+  ```

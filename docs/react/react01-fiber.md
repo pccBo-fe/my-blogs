@@ -21,3 +21,7 @@
   2.Vue 是否会采用 Fiber 机制来优化复杂页面的更新  
 #### [双缓冲策略图解](https://github.com/suoutsky/three-body-problem/issues/123)
 #### [知乎上关于concurrent模式的讨论](https://www.zhihu.com/question/434791954)  
+#### [为什么采用postMessage实现时间分片](https://juejin.cn/post/6953804914715803678) 
+  - [ ] 待看
+#### [为什么采用lane做任务优先级](https://juejin.cn/post/6951206227418284063)
+  - [ ] 待看

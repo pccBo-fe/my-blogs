@@ -47,7 +47,9 @@ getDerivedStateFromProps无论是Mounting还是Updating，也无论是因为什�
 
 !> `v16+` **在不同的启动模式下表现不同**：  
   -legacy：`setXXX hook dispatch本质在执行dispatchAction/setState执行enqueueSetState`,进而进入scheduleUpdateOnFiber中的`lane === synclane`,通过全局上下文executionContext/batchedContext(不同版本代码有点小区别)来判断是否处于批量更新阶段: 合成事件&生命周期会修改全局上下文(**不再通过事务去执行**)进而批量更新, setTimeout会"摆脱"此束缚进而执行flushSyncCallbackQueue,出现"同步"行为(大体上类似于v15版本的"翻译版")  
-  -concurrent：**由于`lane ≠ synclane`,不会再出现"同步"行为**
+  -concurrent：**由于`lane ≠ synclane`,不会再出现"同步"行为, 改为单个时间分片内批量更新**
+  - [concurrent模式下的setState](https://segmentfault.com/a/1190000024560483) `待看`
+  - [concurrent模式硬核加强版文章](https://segmentfault.com/a/1190000022942008) `待看`
   ##### 2.useState vs setState
   - useState自带浅比较(Object.is), setState使用 scu or pureComponent  
   - **useState不会自动合并到旧的state而是直接覆盖, setState会**  
